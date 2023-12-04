@@ -67,9 +67,7 @@ class VerifyUserMiddleware(_OTPMiddleware):
         # If the user has no access to the admin anyway then don't require a
         # verified user here
         if not (
-            user.is_staff
-            or user.is_superuser
-            or user.has_perms(["wagtailadmin.access_admin"])
+            user.is_staff or user.is_superuser or user.has_perms(["wagtailadmin.access_admin"])
         ):
             return False
 
