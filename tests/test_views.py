@@ -13,7 +13,6 @@ from wagtail_2fa.views import (
     DeviceDeleteView, DeviceListView, DeviceUpdateView)
 
 
-
 def test_device_list_view(admin_client, admin_user, django_assert_max_num_queries):
     with override_settings(WAGTAIL_2FA_REQUIRED=True):
         admin_device = TOTPDevice.objects.create(

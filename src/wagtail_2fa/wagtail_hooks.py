@@ -46,9 +46,7 @@ def urlpatterns():
 def remove_menu_if_unverified(request, menu_items):
     """Remove the sidebar menu items if the user is unverified."""
     if (
-        settings.WAGTAIL_2FA_REQUIRED
-        and getattr(request.user, "enable_2fa", True)
-        and not request.user.is_verified()
+        settings.WAGTAIL_2FA_REQUIRED and getattr(request.user, "enable_2fa", True) and not request.user.is_verified()
     ):
         menu_items.clear()
         menu_items.append(
