@@ -31,13 +31,13 @@
                 <input type="hidden" name="next" value="{{ next|default:home_url }}" />
 
                 {% block fields %}
-                    {% field field=form.otp_token %}{% endfield %}
+                    {% comment %} {% field field=form.otp_token %}{% endfield %}
 
                     {% block extra_fields %}
                         {% for field_name, field in form.extra_fields %}
                             {% field field=field %}{% endfield %}
                         {% endfor %}
-                    {% endblock extra_fields %}
+                    {% endblock extra_fields %} {% endcomment %}
 
                 {% endblock %}
             {% endblock %}
